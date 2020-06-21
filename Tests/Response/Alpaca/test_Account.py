@@ -4,7 +4,7 @@ from Response.Alpaca.Account import Account
 
 
 class Account_Test(unittest.TestCase):
-    def test_init(self):
+    def test_init_castsCorrectly(self):
         accountDict = {
             "account_blocked": False,
             "account_number": "010203ABCD",
@@ -60,7 +60,3 @@ class Account_Test(unittest.TestCase):
         self.assertEqual(False, account.trade_suspended_by_user)
         self.assertEqual(False, account.trading_blocked)
         self.assertEqual(False, account.transfers_blocked)
-
-
-if __name__ == '__main__':
-    unittest.main()

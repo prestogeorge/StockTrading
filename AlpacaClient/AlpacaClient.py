@@ -1,5 +1,5 @@
 from AlpacaService.AlpacaService import AlpacaService
 class AlpacaClient(object):
     @staticmethod
-    def getAccount(self, alpacaClientConfig):
+    def getAccount(alpacaClientConfig):
         return AlpacaService.getAccount(alpacaClientConfig)

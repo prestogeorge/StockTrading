@@ -1,6 +1,5 @@
 import requests
 
-from AlpacaClient.AlpacaClientConfig import AlpacaClientConfig
 from Response.Alpaca.Account import Account
 
 
