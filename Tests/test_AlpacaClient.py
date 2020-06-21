@@ -6,7 +6,7 @@ from AlpacaService.AlpacaService import AlpacaService
 from unittest.mock import MagicMock
 
 
-class AlpacaClient_Test(unittest.TestCase):
+class test_AlpacaClient(unittest.TestCase):
     def test_getAccount_callsService(self):
         AlpacaService.getAccount = MagicMock(staticmethod='getAccount')
         alpacaClientConfig = AlpacaClientConfig('YOUR-KEY', 'YOUR-SECRET-KEY', 'YOUR-BASE-URL')

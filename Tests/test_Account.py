@@ -3,7 +3,7 @@ import unittest
 from Response.Alpaca.Account import Account
 
 
-class Account_Test(unittest.TestCase):
+class test_Account(unittest.TestCase):
     def test_init_castsCorrectly(self):
         accountDict = {
             "account_blocked": False,
