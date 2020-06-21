@@ -6,8 +6,7 @@ from AlpacaService import AlpacaService
 
 
 class test_AlpacaService(unittest.TestCase):
-    @patch('requests.get')
-    def test_getAccount_returnsAccount(self, mocked_requests):
+    def test_getAccount_returnsAccount(self):
         alpacaClientConfig = AlpacaClientConfig('YOUR-KEY', 'YOUR-SECRET-KEY', 'YOUR-BASE-URL')
         #TODO: figure out how to mock requests.get
         #account = AlpacaService.AlpacaService.getAccount(alpacaClientConfig)
