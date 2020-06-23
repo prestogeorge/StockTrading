@@ -1,6 +1,7 @@
 import datetime
 import unittest
 from Response.Alpaca.Account import Account
+from iso4217 import Currency
 
 
 class test_Account(unittest.TestCase):
@@ -33,13 +34,13 @@ class test_Account(unittest.TestCase):
             "trading_blocked": False,
             "transfers_blocked": False
         }
-        account = Account(accountDict)
+        account = Account(**accountDict)
         self.assertEqual(False, account.account_blocked)
         self.assertEqual("010203ABCD", account.account_number)
         self.assertEqual(262113.632, account.buying_power)
         self.assertEqual(-23140.2, account.cash)
         self.assertEqual(datetime.datetime.strptime("2019-06-12T22:47:07.99658Z", "%Y-%m-%dT%H:%M:%S.%fZ"), account.created_at)
-        self.assertEqual("USD", account.currency)
+        self.assertEqual(Currency.usd, account.currency)
         self.assertEqual(0, account.daytrade_count)
         self.assertEqual(262113.632, account.daytrading_buying_power)
         self.assertEqual(103820.56, account.equity)
