@@ -2,6 +2,7 @@ from datetime import datetime
 
 from undictify import type_checked_constructor, optional_converter
 from dataclasses import dataclass
+from iso4217 import Currency
 
 
 # Example from https://github.com/Dobiasd/undictify
@@ -17,7 +18,7 @@ class Account(object):
     buying_power: float
     cash: float
     created_at: datetime
-    currency: str
+    currency: Currency
     daytrade_count: int
     daytrading_buying_power: float
     equity: float
