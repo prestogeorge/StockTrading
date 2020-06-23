@@ -33,7 +33,7 @@ class test_Account(unittest.TestCase):
             "trading_blocked": False,
             "transfers_blocked": False
         }
-        account = Account(accountDict)
+        account = Account(**accountDict)
         self.assertEqual(False, account.account_blocked)
         self.assertEqual("010203ABCD", account.account_number)
         self.assertEqual(262113.632, account.buying_power)
