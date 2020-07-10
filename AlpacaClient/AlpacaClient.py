@@ -7,3 +7,6 @@ class AlpacaClient(object):
 
     def getAccount(self):
         return AlpacaService.getAccount(self.alpacaClientConfig)
+
+    def getPosition(self, symbol):
+        return AlpacaService.getPosition(self.alpacaClientConfig, symbol)
