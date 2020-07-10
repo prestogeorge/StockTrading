@@ -21,3 +21,4 @@ class AlpacaService(object):
         url += str(symbol)
         r = requests.get(url, headers=headers)
         return Position(r.json())
+

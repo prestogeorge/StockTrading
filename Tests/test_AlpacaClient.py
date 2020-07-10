@@ -13,4 +13,10 @@ class test_AlpacaClient(unittest.TestCase):
         alpacaClient = AlpacaClient(alpacaClientConfig)
         account = alpacaClient.getAccount()
         AlpacaService.getAccount.assert_called_with(alpacaClientConfig)
-        self.assertEqual(True, True)
+
+    def test_getPosition_callsService(self):
+        AlpacaService.getPosition = MagicMock(staticmethod='getPosition')
+        alpacaClientConfig = AlpacaClientConfig('YOUR-KEY', 'YOUR-SECRET-KEY', 'YOUR-BASE-URL')
+        alpacaClient = AlpacaClient(alpacaClientConfig)
+        position = alpacaClient.getPosition("SYM")
+        AlpacaService.getPosition.assert_called_with(alpacaClientConfig, "SYM")
