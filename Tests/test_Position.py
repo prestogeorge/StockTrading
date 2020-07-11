@@ -1,12 +1,9 @@
-import datetime
 import unittest
-
-from iso4217 import Currency
 
 from Response.Alpaca.Position import Position
 
 
-class test_Account(unittest.TestCase):
+class test_Position(unittest.TestCase):
     def test_init_castsCorrectly(self):
         positionDict = {
             "asset_id": "904837e3-3b76-47ec-b432-046db621571b",

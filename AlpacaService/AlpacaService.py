@@ -22,3 +22,13 @@ class AlpacaService(object):
         r = requests.get(url, headers=headers)
         return Position(r.json())
 
+    @staticmethod
+    def getPositions(alpacaClientConfig):
+        url = alpacaClientConfig.baseUrl + "/positions"
+        headers = {'APCA-API-KEY-ID': alpacaClientConfig.keyId,
+                   'APCA-API-SECRET-KEY': alpacaClientConfig.secretKeyId}
+        r = requests.get(url, headers=headers)
+        positions = []
+        for position in r.json():
+            positions.append(Position(position))
+        return positions
