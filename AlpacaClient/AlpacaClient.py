@@ -13,3 +13,9 @@ class AlpacaClient(object):
 
     def getPositions(self):
         return AlpacaService.getPositions(self.alpacaClientConfig)
+
+    def deletePosition(self, symbol):
+        return AlpacaService.deletePosition(self.alpacaClientConfig, symbol)
+
+    def deletePositions(self):
+        return AlpacaService.deletePositions(self.alpacaClientConfig)

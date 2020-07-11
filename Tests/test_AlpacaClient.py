@@ -25,3 +25,13 @@ class test_AlpacaClient(unittest.TestCase):
         AlpacaService.getPositions = MagicMock(staticmethod='getPositions')
         positions = self.alpacaClient.getPositions()
         AlpacaService.getPositions.assert_called_with(self.alpacaClient.alpacaClientConfig)
+
+    def test_deletePosition_callsService(self):
+        AlpacaService.deletePosition = MagicMock(staticmethod='deletePosition')
+        order = self.alpacaClient.deletePosition("SYM")
+        AlpacaService.deletePosition.assert_called_with(self.alpacaClient.alpacaClientConfig, "SYM")
+
+    def test_deletePositions_callsService(self):
+        AlpacaService.deletePositions = MagicMock(staticmethod='deletePositions')
+        response = self.alpacaClient.deletePositions()
+        AlpacaService.deletePositions.assert_called_with(self.alpacaClient.alpacaClientConfig)

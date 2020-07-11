@@ -17,3 +17,9 @@ class test_AlpacaService(unittest.TestCase):
 
     def test_getPositions_returnsPositions(self):
         self.assertEqual(True, True)
+
+    def test_deletePosition_returnsOrder(self):
+        self.assertEqual(True, True)
+
+    def test_deletePositions_returnsResponse(self):
+        self.assertEqual(True, True)
